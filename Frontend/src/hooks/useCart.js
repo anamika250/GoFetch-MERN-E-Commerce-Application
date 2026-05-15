@@ -14,7 +14,7 @@ function useCart(autoFetch = true) {
       setloading(true);
       seterror(null);
 
-      const res = await axios.get("/api/cart/all");
+      const res = await axios.get("/api/cart/all",{withCredentials:true});
 
       if (res.data.code === 1) {
         setcartdata(res.data.cartdata);
