@@ -1,9 +1,7 @@
-require("dns").setDefaultResultOrder("ipv4first");
-
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "smtp-relay.brevo.com",
   port: 587,
   secure: false,
 
@@ -11,12 +9,6 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_UNAME,
     pass: process.env.SMTP_PASS,
   },
-
-  tls: {
-    rejectUnauthorized: false,
-  },
-
-  connectionTimeout: 10000,
 });
 
 const sendMail = async (mailOptions) => {
