@@ -7,6 +7,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.SMTP_PASS,
   },
   connectionTimeout: 10000,
+  family: 4
 });
 
 const sendMail = async (mailOptions) => 
