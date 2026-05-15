@@ -46,9 +46,10 @@ const createUser = async (req, res) => {
       html: `
         Hello ${pname},<br/><br/>
         Click below to activate your account:<br/><br/>
-        <a href="http://localhost:3000/activateaccount?id=${code}">
-          Activate Account
-        </a>
+        <a href="https://go-fetch-mern-e-commerce-application.vercel.app/activateaccount?id=${code}">Activate Account</a><br/><br/>
+        If you didn't create an account, ignore this email.<br/><br/>
+        Thanks,<br/>
+        GoFetch Team
       `,
     };
 
