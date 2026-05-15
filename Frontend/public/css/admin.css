@@ -1,0 +1,3843 @@
+/* =========================================================
+   ADMIN TOPBAR
+========================================================= */
+
+.admin-topbar {
+  background: linear-gradient(90deg, #0f172a, #111827);
+
+  padding: 12px 0;
+
+  color: white;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-topbar-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+/* TEXT */
+
+.admin-topbar p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #e5e7eb;
+}
+
+.admin-topbar strong {
+  color: white;
+}
+
+/* ACTIONS */
+
+.admin-user-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.admin-user-actions a {
+  color: #f3f4f6;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.admin-user-actions a:hover {
+  color: #22c55e;
+}
+
+/* LOGOUT BUTTON */
+
+.admin-logout-btn {
+  border: none;
+
+  background: linear-gradient(135deg, #ff4d4f, #ef4444);
+
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 8px 18px rgba(239, 68, 68, 0.18);
+}
+
+.admin-logout-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 22px rgba(239, 68, 68, 0.28);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.admin-navbar {
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(16px);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.admin-navbar-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  min-height: 82px;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.admin-logo a {
+  font-size: 38px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: -1px;
+}
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.admin-nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+}
+
+.admin-nav-links a,
+.admin-dropdown span {
+  text-decoration: none;
+
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  position: relative;
+}
+
+/* UNDERLINE */
+
+.admin-nav-links a::after,
+.admin-dropdown span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -7px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: #22c55e;
+
+  transition: 0.3s ease;
+}
+
+.admin-nav-links a:hover::after,
+.admin-dropdown span:hover::after {
+  width: 100%;
+}
+
+.admin-nav-links a:hover,
+.admin-dropdown span:hover {
+  color: #22c55e;
+}
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.admin-dropdown {
+  position: relative;
+}
+
+.admin-dropdown-menu {
+  position: absolute;
+
+  top: 120%;
+
+  left: 0;
+
+  min-width: 220px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 12px 0;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(10px);
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.admin-dropdown:hover .admin-dropdown-menu {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+/* DROPDOWN LINKS */
+
+.admin-dropdown-menu a {
+  display: block;
+
+  padding: 12px 18px;
+
+  color: #374151;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: 0.25s ease;
+}
+
+.admin-dropdown-menu a:hover {
+  background: #f0fdf4;
+
+  color: #22c55e;
+
+  padding-left: 24px;
+}
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.admin-mobile-btn {
+  display: none;
+
+  width: 46px;
+
+  height: 46px;
+
+  border-radius: 14px;
+
+  background: #f3f4f6;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.3s ease;
+}
+
+.admin-mobile-btn:hover {
+  background: #22c55e;
+
+  color: white;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .admin-mobile-btn {
+    display: flex;
+  }
+
+  .admin-nav-links {
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 22px;
+
+    gap: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .admin-nav-links.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  .admin-dropdown-menu {
+    position: static;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: none;
+
+    box-shadow: none;
+
+    border: none;
+
+    padding: 10px 0 0 10px;
+
+    background: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-topbar-inner {
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: center;
+  }
+
+  .admin-navbar-inner {
+    min-height: 72px;
+  }
+
+  .admin-logo a {
+    font-size: 30px;
+  }
+
+  .admin-nav-links {
+    gap: 16px;
+  }
+}
+
+/* =========================================================
+   ADMIN HERO
+========================================================= */
+
+.adminhome-hero {
+  min-height: 58vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 70px 20px 120px;
+}
+
+/* BACKGROUND SLIDER */
+
+.adminhome-hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("/images/11.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  animation: adminHeroSlider 18s infinite;
+
+  z-index: -2;
+}
+
+/* CURVED BOTTOM */
+
+.adminhome-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: -5%;
+
+  bottom: -90px;
+
+  width: 110%;
+
+  height: 180px;
+
+  background: #f4f6f9;
+
+  border-radius: 50% 50% 0 0;
+
+  z-index: -1;
+}
+
+/* ANIMATION */
+
+@keyframes adminHeroSlider {
+  0% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("/images/11.jpg");
+  }
+
+  33% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("/images/22.jpg");
+  }
+
+  66% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("/images/44.jpg");
+  }
+
+  100% {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("/images/11.jpg");
+  }
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.adminhome-overlay {
+  max-width: 760px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* BADGE */
+
+.adminhome-badge {
+  display: inline-block;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  padding: 10px 22px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  margin-bottom: 24px;
+
+  backdrop-filter: blur(10px);
+}
+
+/* TITLE */
+
+.adminhome-overlay h1 {
+  font-size: 62px;
+
+  line-height: 1.05;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+
+.adminhome-overlay p {
+  color: #e5e7eb;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  max-width: 650px;
+
+  margin: auto;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.adminhome-section {
+  background: #f4f6f9;
+
+  padding: 0 0 80px;
+
+  position: relative;
+
+  z-index: 3;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.adminhome-header {
+  background: white;
+
+  border-radius: 28px;
+
+  padding: 26px 32px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* TITLE */
+
+.adminhome-header h2 {
+  font-size: 28px;
+
+  font-weight: 800;
+
+  color: #0f172a;
+
+  margin-bottom: 6px;
+}
+
+/* TEXT */
+
+.adminhome-header p {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.admin-logout-main {
+  border: none;
+
+  background: #ff4d4f;
+
+  color: white;
+
+  height: 44px;
+
+  padding: 0 24px;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.admin-logout-main:hover {
+  background: #e53935;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.adminhome-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
+  gap: 18px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.admin-card {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  text-decoration: none;
+
+  transition: 0.28s ease;
+
+  border: 1px solid #eef2f7;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* TOP GLOW */
+
+.admin-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background: linear-gradient(90deg, #22c55e, #3b82f6, #8b5cf6);
+
+  opacity: 0;
+
+  transition: 0.3s ease;
+}
+
+.admin-card:hover::before {
+  opacity: 1;
+}
+
+/* HOVER */
+
+.admin-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.admin-card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 18px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.admin-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.admin-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .adminhome-overlay h1 {
+    font-size: 50px;
+  }
+
+  .adminhome-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .adminhome-hero {
+    min-height: 48vh;
+
+    padding-bottom: 100px;
+  }
+
+  .adminhome-overlay h1 {
+    font-size: 36px;
+  }
+
+  .adminhome-overlay p {
+    font-size: 14px;
+  }
+
+  .adminhome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adminhome-header {
+    padding: 22px;
+  }
+
+  .adminhome-header h2 {
+    font-size: 24px;
+  }
+
+  .admin-card {
+    padding: 22px;
+  }
+
+  /* =========================================================
+   ICON
+========================================================= */
+
+  .admin-card-icon {
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    margin-bottom: 18px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+
+    transition: 0.3s ease;
+  }
+
+  .admin-card:hover .admin-card-icon {
+    transform: translateY(-3px) scale(1.05);
+
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+
+    color: white;
+  }
+}
+
+/* =========================================================
+   CREATE ADMIN PAGE
+========================================================= */
+
+.register {
+  min-height: 100vh;
+
+  padding: 60px 0 80px;
+
+  background:
+    linear-gradient(rgba(7, 12, 28, 0.84), rgba(7, 12, 28, 0.84)),
+    url("/images/44.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.register .container {
+  width: 92%;
+
+  max-width: 620px;
+
+  margin: auto;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.register h2 {
+  text-align: center;
+
+  font-size: 48px;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 35px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.register form {
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+
+  padding: 34px;
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.register form input[type="text"],
+.register form input[type="email"],
+.register form input[type="password"] {
+  width: 100%;
+
+  height: 58px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 0 18px;
+
+  font-size: 15px;
+
+  background: #f9fafb;
+
+  margin-bottom: 16px;
+
+  transition: 0.3s ease;
+}
+
+/* FOCUS */
+
+.register form input:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.register label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 8px;
+
+  margin-bottom: 12px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.register label input {
+  width: 18px;
+
+  height: 18px;
+}
+
+/* =========================================================
+   ERRORS
+========================================================= */
+
+.register form p {
+  color: #dc2626;
+
+  font-size: 13px;
+
+  margin-top: -8px;
+
+  margin-bottom: 12px;
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.register button {
+  width: 100%;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  margin-top: 12px;
+
+  transition: 0.3s ease;
+}
+
+.register button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.28);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+  .register {
+    padding: 45px 0 65px;
+  }
+
+  .register h2 {
+    font-size: 34px;
+  }
+
+  .register form {
+    padding: 24px;
+  }
+
+  .register form input[type="text"],
+  .register form input[type="email"],
+  .register form input[type="password"] {
+    height: 54px;
+
+    font-size: 14px;
+  }
+
+  .register button {
+    height: 54px;
+
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   MANAGE CATEGORY PAGE
+========================================================= */
+
+.manage-category-page {
+  min-height: 100vh;
+
+  padding: 60px 0 80px;
+
+  background:
+    linear-gradient(rgba(7, 12, 28, 0.84), rgba(7, 12, 28, 0.84)),
+    url("/images/22.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.manage-category-container {
+  width: 92%;
+
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manage-category-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.manage-category-header h2 {
+  font-size: 48px;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.manage-category-header p {
+  color: #d1d5db;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.manage-category-form {
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+
+  padding: 30px;
+
+  margin-bottom: 45px;
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* FIELDS */
+
+.manage-category-fields {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+
+  align-items: center;
+}
+
+/* INPUTS */
+
+.manage-category-fields input {
+  width: 100%;
+
+  height: 58px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 0 18px;
+
+  font-size: 14px;
+
+  background: #f9fafb;
+
+  transition: 0.3s ease;
+}
+
+/* FILE */
+
+.manage-category-fields input[type="file"] {
+  padding: 14px;
+}
+
+/* FOCUS */
+
+.manage-category-fields input:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.manage-category-preview {
+  grid-column: span 2;
+
+  text-align: center;
+
+  margin-top: 10px;
+}
+
+.manage-category-preview img {
+  width: 130px;
+
+  height: 130px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  border: 4px solid #f3f4f6;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.manage-category-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 26px;
+}
+
+/* BUTTONS */
+
+.manage-category-btn {
+  border: none;
+
+  padding: 15px 26px;
+
+  border-radius: 16px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.manage-category-btn.primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+}
+
+.manage-category-btn.secondary {
+  background: #f3f4f6;
+
+  color: #111827;
+}
+
+.manage-category-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TABLE WRAP
+========================================================= */
+
+.manage-category-table-wrap {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.manage-category-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+/* HEAD */
+
+.manage-category-table thead {
+  background: #f3f4f6;
+}
+
+.manage-category-table th {
+  padding: 22px;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #374151;
+}
+
+/* BODY */
+
+.manage-category-table td {
+  padding: 22px;
+
+  border-top: 1px solid #f3f4f6;
+
+  font-size: 14px;
+
+  color: #4b5563;
+}
+
+/* IMAGE */
+
+.manage-category-table img {
+  width: 90px;
+
+  height: 90px;
+
+  object-fit: cover;
+
+  border-radius: 18px;
+}
+
+/* NAME */
+
+.manage-category-name {
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* ROW HOVER */
+
+.manage-category-table tbody tr {
+  transition: 0.3s ease;
+}
+
+.manage-category-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* =========================================================
+   TABLE BUTTONS
+========================================================= */
+
+.manage-table-btn {
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+/* EDIT */
+
+.manage-table-btn.edit {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+.manage-table-btn.edit:hover {
+  background: #16a34a;
+
+  color: white;
+}
+
+/* DELETE */
+
+.manage-table-btn.delete {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+.manage-table-btn.delete:hover {
+  background: #dc2626;
+
+  color: white;
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.manage-category-empty {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 28px;
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+.manage-category-empty h3 {
+  font-size: 28px;
+
+  color: #111827;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .manage-category-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .manage-category-preview {
+    grid-column: span 1;
+  }
+
+  .manage-category-table-wrap {
+    overflow-x: auto;
+  }
+
+  .manage-category-table {
+    min-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .manage-category-page {
+    padding: 45px 0 65px;
+  }
+
+  .manage-category-header h2 {
+    font-size: 34px;
+  }
+
+  .manage-category-header p {
+    font-size: 14px;
+  }
+
+  .manage-category-form {
+    padding: 22px;
+  }
+
+  .manage-category-actions {
+    flex-direction: column;
+  }
+
+  .manage-category-table th,
+  .manage-category-table td {
+    padding: 16px;
+  }
+
+  .manage-category-table img {
+    width: 70px;
+
+    height: 70px;
+  }
+
+  .manage-category-name {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   MANAGE PRODUCT PAGE
+========================================================= */
+
+.manage-product-page {
+  min-height: 100vh;
+
+  padding: 60px 0 80px;
+
+  background:
+    linear-gradient(rgba(7, 12, 28, 0.84), rgba(7, 12, 28, 0.84)),
+    url("/images/33.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.manage-product-container {
+  width: 92%;
+
+  max-width: 1300px;
+
+  margin: auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manage-product-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.manage-product-header h2 {
+  font-size: 48px;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.manage-product-header p {
+  color: #d1d5db;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.manage-product-form {
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+
+  padding: 30px;
+
+  margin-bottom: 45px;
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* GRID */
+
+.manage-product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+/* INPUTS */
+
+.manage-product-grid input,
+.manage-product-grid select,
+.manage-product-grid textarea {
+  width: 100%;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 16px 18px;
+
+  font-size: 14px;
+
+  background: #f9fafb;
+
+  transition: 0.3s ease;
+}
+
+/* TEXTAREA */
+
+.manage-product-grid textarea {
+  min-height: 130px;
+
+  resize: none;
+
+  grid-column: span 2;
+}
+
+/* FILE */
+
+.manage-product-grid input[type="file"] {
+  padding: 14px;
+}
+
+/* FOCUS */
+
+.manage-product-grid input:focus,
+.manage-product-grid select:focus,
+.manage-product-grid textarea:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.manage-product-checkbox {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+  font-size: 15px;
+
+  color: #374151;
+
+  font-weight: 600;
+}
+
+.manage-product-checkbox input {
+  width: 18px;
+
+  height: 18px;
+}
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.manage-product-preview {
+  margin-top: 24px;
+
+  text-align: center;
+}
+
+.manage-product-preview img {
+  width: 130px;
+
+  height: 130px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  border: 4px solid #f3f4f6;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.manage-product-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+/* BUTTONS */
+
+.manage-product-btn {
+  border: none;
+
+  padding: 15px 26px;
+
+  border-radius: 16px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.manage-product-btn.primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+}
+
+.manage-product-btn.secondary {
+  background: #f3f4f6;
+
+  color: #111827;
+}
+
+.manage-product-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PRODUCTS GRID
+========================================================= */
+
+.manage-products-list {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 25px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.manage-product-card {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 26px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+
+  transition: 0.3s ease;
+}
+
+.manage-product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+
+.manage-product-card-image {
+  height: 240px;
+
+  background: #f3f4f6;
+}
+
+.manage-product-card-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* CONTENT */
+
+.manage-product-card-content {
+  padding: 24px;
+}
+
+.manage-product-card-content h3 {
+  font-size: 24px;
+
+  color: #111827;
+
+  margin-bottom: 14px;
+
+  font-weight: 700;
+}
+
+/* PRICE */
+
+.manage-product-price {
+  font-size: 28px;
+
+  color: #16a34a;
+
+  font-weight: 800;
+
+  margin-bottom: 14px;
+}
+
+/* DESCRIPTION */
+
+.manage-product-description {
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+/* STOCK */
+
+.manage-stock {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  margin-bottom: 22px;
+}
+
+.manage-stock.in {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+.manage-stock.out {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.manage-product-card-actions {
+  display: flex;
+
+  gap: 12px;
+}
+
+/* CARD BUTTONS */
+
+.manage-card-btn {
+  flex: 1;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.manage-card-btn.edit {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+.manage-card-btn.edit:hover {
+  background: #16a34a;
+
+  color: white;
+}
+
+.manage-card-btn.delete {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+.manage-card-btn.delete:hover {
+  background: #dc2626;
+
+  color: white;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .manage-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manage-product-grid textarea {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .manage-product-page {
+    padding: 45px 0 65px;
+  }
+
+  .manage-product-header h2 {
+    font-size: 34px;
+  }
+
+  .manage-product-header p {
+    font-size: 14px;
+  }
+
+  .manage-product-form {
+    padding: 22px;
+  }
+
+  .manage-product-card-image {
+    height: 200px;
+  }
+
+  .manage-product-card-content h3 {
+    font-size: 20px;
+  }
+
+  .manage-product-price {
+    font-size: 24px;
+  }
+
+  .manage-product-actions {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   MANAGE SUB CATEGORY PAGE
+========================================================= */
+
+.manage-product-page {
+  min-height: 100vh;
+
+  padding: 60px 0 80px;
+
+  background:
+    linear-gradient(rgba(7, 12, 28, 0.84), rgba(7, 12, 28, 0.84)),
+    url("/images/22.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.manage-product-container {
+  width: 92%;
+
+  max-width: 1250px;
+
+  margin: auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manage-product-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.manage-product-header h2 {
+  font-size: 46px;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.manage-product-header p {
+  color: #d1d5db;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.manage-product-form {
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 26px;
+
+  padding: 28px;
+
+  margin-bottom: 40px;
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* GRID */
+
+.manage-product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+/* INPUTS */
+
+.manage-product-grid input,
+.manage-product-grid select {
+  height: 56px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 0 18px;
+
+  font-size: 14px;
+
+  background: #f9fafb;
+
+  transition: 0.3s ease;
+}
+
+.manage-product-grid input:focus,
+.manage-product-grid select:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+/* FILE */
+
+.manage-product-grid input[type="file"] {
+  padding: 14px;
+}
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.manage-product-preview {
+  margin-top: 22px;
+
+  text-align: center;
+}
+
+.manage-product-preview img {
+  width: 120px;
+
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  border: 4px solid #f3f4f6;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.manage-product-actions {
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 24px;
+}
+
+/* BUTTONS */
+
+.manage-product-btn {
+  border: none;
+
+  padding: 14px 24px;
+
+  border-radius: 16px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.manage-product-btn.primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+}
+
+.manage-product-btn.secondary {
+  background: #f3f4f6;
+
+  color: #111827;
+}
+
+.manage-product-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PRODUCTS LIST
+========================================================= */
+
+.manage-products-list {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.manage-product-card {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+
+  transition: 0.3s ease;
+}
+
+.manage-product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+
+.manage-product-card-image {
+  height: 220px;
+
+  background: #f3f4f6;
+}
+
+.manage-product-card-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* CONTENT */
+
+.manage-product-card-content {
+  padding: 22px;
+}
+
+.manage-product-card-content h3 {
+  font-size: 24px;
+
+  color: #111827;
+
+  margin-bottom: 12px;
+
+  font-weight: 700;
+}
+
+.manage-product-description {
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.manage-product-card-actions {
+  display: flex;
+
+  gap: 12px;
+}
+
+/* CARD BUTTONS */
+
+.manage-card-btn {
+  flex: 1;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.manage-card-btn.edit {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+.manage-card-btn.edit:hover {
+  background: #16a34a;
+
+  color: white;
+}
+
+.manage-card-btn.delete {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+.manage-card-btn.delete:hover {
+  background: #dc2626;
+
+  color: white;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .manage-product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .manage-product-page {
+    padding: 45px 0 65px;
+  }
+
+  .manage-product-header h2 {
+    font-size: 34px;
+  }
+
+  .manage-product-header p {
+    font-size: 14px;
+  }
+
+  .manage-product-form {
+    padding: 22px;
+  }
+
+  .manage-product-card-image {
+    height: 190px;
+  }
+
+  .manage-product-card-content h3 {
+    font-size: 20px;
+  }
+
+  .manage-product-actions {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   ALL USERS PAGE
+========================================================= */
+
+.allusers-page {
+  min-height: 100vh;
+
+  padding: 60px 0 80px;
+
+  background:
+    linear-gradient(rgba(7, 12, 28, 0.82), rgba(7, 12, 28, 0.82)),
+    url("/images/44.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.allusers-container {
+  width: 92%;
+
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.allusers-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.allusers-header h2 {
+  font-size: 46px;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.allusers-loading {
+  text-align: center;
+
+  color: white;
+
+  padding: 70px 20px;
+}
+
+.allusers-loader {
+  width: 55px;
+
+  height: 55px;
+
+  border: 5px solid rgba(255, 255, 255, 0.25);
+
+  border-top: 5px solid white;
+
+  border-radius: 50%;
+
+  margin: auto auto 20px;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLE WRAP
+========================================================= */
+
+.allusers-table-wrap {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.allusers-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+/* HEAD */
+
+.allusers-table thead {
+  background: #f3f4f6;
+}
+
+.allusers-table th {
+  padding: 22px;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #374151;
+}
+
+/* BODY */
+
+.allusers-table td {
+  padding: 22px;
+
+  border-top: 1px solid #f3f4f6;
+
+  font-size: 14px;
+
+  color: #4b5563;
+}
+
+.allusers-name {
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* ROW HOVER */
+
+.allusers-table tbody tr {
+  transition: 0.3s ease;
+}
+
+.allusers-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.allusers-delete-btn {
+  border: none;
+
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.allusers-delete-btn:hover {
+  background: #dc2626;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.allusers-empty {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 26px;
+
+  padding: 55px 30px;
+
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+.allusers-empty img {
+  width: 220px;
+
+  margin-bottom: 25px;
+}
+
+.allusers-empty h2 {
+  font-size: 34px;
+
+  color: #111827;
+
+  margin-bottom: 12px;
+}
+
+.allusers-empty p {
+  color: #6b7280;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .allusers-table-wrap {
+    overflow-x: auto;
+  }
+
+  .allusers-table {
+    min-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .allusers-page {
+    padding: 45px 0 65px;
+  }
+
+  .allusers-header h2 {
+    font-size: 34px;
+  }
+
+  .allusers-table th,
+  .allusers-table td {
+    padding: 16px;
+
+    font-size: 13px;
+  }
+
+  .allusers-delete-btn {
+    padding: 9px 14px;
+
+    font-size: 12px;
+  }
+
+  .allusers-empty {
+    padding: 40px 20px;
+  }
+
+  .allusers-empty img {
+    width: 170px;
+  }
+
+  .allusers-empty h2 {
+    font-size: 28px;
+  }
+}
+
+/* =========================================================
+   SEARCH USER PAGE
+========================================================= */
+
+.searchuser-page {
+  min-height: 100vh;
+
+  padding: 60px 0 80px;
+
+  background:
+    linear-gradient(rgba(7, 12, 28, 0.82), rgba(7, 12, 28, 0.82)),
+    url("/images/11.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.searchuser-container {
+  width: 92%;
+
+  max-width: 950px;
+
+  margin: auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.searchuser-header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.searchuser-header h2 {
+  font-size: 44px;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.searchuser-header p {
+  color: #d1d5db;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   SEARCH FORM
+========================================================= */
+
+.searchuser-form {
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 22px;
+
+  padding: 20px;
+
+  display: flex;
+
+  gap: 16px;
+
+  align-items: center;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+
+  margin-bottom: 35px;
+}
+
+/* INPUT */
+
+.searchuser-form input {
+  flex: 1;
+
+  height: 56px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  padding: 0 18px;
+
+  font-size: 15px;
+
+  background: #f9fafb;
+
+  transition: 0.3s ease;
+}
+
+.searchuser-form input:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+/* BUTTON */
+
+.searchuser-form button {
+  height: 56px;
+
+  border: none;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+
+  padding: 0 26px;
+
+  border-radius: 16px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.searchuser-form button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.28);
+}
+
+/* =========================================================
+   USER CARD
+========================================================= */
+
+.searchuser-card {
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 26px;
+
+  padding: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+/* AVATAR */
+
+.searchuser-avatar {
+  width: 90px;
+
+  height: 90px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 34px;
+
+  font-weight: 800;
+
+  flex-shrink: 0;
+}
+
+/* CONTENT */
+
+.searchuser-content {
+  flex: 1;
+}
+
+.searchuser-content h3 {
+  font-size: 30px;
+
+  color: #111827;
+
+  margin-bottom: 16px;
+
+  font-weight: 700;
+}
+
+.searchuser-content p {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 15px;
+
+  color: #4b5563;
+
+  margin-bottom: 12px;
+}
+
+.searchuser-content p span {
+  font-size: 16px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .searchuser-form {
+    flex-direction: column;
+  }
+
+  .searchuser-form button {
+    width: 100%;
+  }
+
+  .searchuser-card {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .searchuser-content p {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .searchuser-page {
+    padding: 45px 0 65px;
+  }
+
+  .searchuser-header h2 {
+    font-size: 34px;
+  }
+
+  .searchuser-header p {
+    font-size: 14px;
+  }
+
+  .searchuser-card {
+    padding: 24px 20px;
+  }
+
+  .searchuser-avatar {
+    width: 80px;
+
+    height: 80px;
+
+    font-size: 30px;
+  }
+
+  .searchuser-content h3 {
+    font-size: 26px;
+  }
+
+  .searchuser-content p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   VIEW ORDERS HERO
+========================================================= */
+
+.vieworders-hero {
+  min-height: 45vh;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    url("/images/44.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 60px 20px;
+}
+
+.vieworders-overlay {
+  max-width: 760px;
+}
+
+.vieworders-badge {
+  display: inline-block;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  color: white;
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  margin-bottom: 18px;
+}
+
+.vieworders-overlay h1 {
+  font-size: 58px;
+
+  line-height: 1.05;
+
+  color: white;
+
+  font-weight: 800;
+
+  margin-bottom: 18px;
+}
+
+.vieworders-overlay p {
+  font-size: 17px;
+
+  color: #e5e7eb;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.vieworders-section {
+  padding: 40px 0 70px;
+
+  background: #f5f7fb;
+}
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.orders-filter-card {
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 28px;
+
+  margin-bottom: 35px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* HEADER */
+
+.orders-filter-header {
+  margin-bottom: 22px;
+}
+
+.orders-filter-header h2 {
+  font-size: 28px;
+
+  color: #111827;
+
+  margin-bottom: 6px;
+
+  font-weight: 700;
+}
+
+.orders-filter-header p {
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+/* FILTER GRID */
+
+.orders-filter-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  align-items: end;
+}
+
+/* GROUP */
+
+.filter-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.filter-group label {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+/* INPUT */
+
+.filter-group input {
+  height: 52px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 0 16px;
+
+  background: #f9fafb;
+
+  font-size: 14px;
+
+  transition: 0.3s ease;
+}
+
+.filter-group input:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  background: white;
+}
+
+/* BUTTON */
+
+.fetch-orders-btn {
+  height: 52px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.fetch-orders-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   ORDERS GRID
+========================================================= */
+
+.orders-list-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================================================
+   ORDER CARD
+========================================================= */
+
+.admin-order-card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  transition: 0.3s ease;
+}
+
+.admin-order-card:hover {
+  transform: translateY(-4px);
+}
+
+/* TOP */
+
+.admin-order-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  margin-bottom: 20px;
+}
+
+.admin-order-top span {
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+.admin-order-top h3 {
+  font-size: 24px;
+
+  color: #111827;
+
+  margin-top: 4px;
+
+  font-weight: 700;
+}
+
+/* STATUS */
+
+.admin-order-status {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.admin-order-status.confirmed {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.admin-order-status.shipped,
+.admin-order-status.in-transit {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.admin-order-status.out-for-delivery {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.admin-order-status.delivered {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.admin-order-status.cancelled,
+.admin-order-status.returned {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* INFO */
+
+.admin-order-info {
+  margin-bottom: 18px;
+}
+
+.admin-order-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.admin-order-row span {
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+.admin-order-row strong {
+  font-size: 14px;
+
+  color: #111827;
+}
+
+.amount-text {
+  color: #16a34a !important;
+
+  font-size: 16px !important;
+}
+
+/* ADDRESS */
+
+.admin-order-address {
+  background: #f9fafb;
+
+  border-radius: 16px;
+
+  padding: 16px;
+
+  margin-bottom: 20px;
+}
+
+.admin-order-address span {
+  display: block;
+
+  font-size: 13px;
+
+  color: #6b7280;
+
+  margin-bottom: 8px;
+}
+
+.admin-order-address p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #374151;
+}
+
+/* ACTIONS */
+
+.admin-order-actions {
+  display: flex;
+
+  gap: 14px;
+}
+
+/* BUTTONS */
+
+.view-items-btn,
+.update-order-btn {
+  flex: 1;
+
+  text-align: center;
+
+  padding: 13px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.view-items-btn {
+  background: #f3f4f6;
+
+  color: #111827;
+}
+
+.view-items-btn:hover {
+  background: #e5e7eb;
+}
+
+.update-order-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: white;
+}
+
+.update-order-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .vieworders-overlay h1 {
+    font-size: 40px;
+  }
+
+  .orders-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-order-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .vieworders-hero {
+    min-height: 38vh;
+  }
+
+  .vieworders-overlay h1 {
+    font-size: 34px;
+  }
+
+  .vieworders-overlay p {
+    font-size: 15px;
+  }
+
+  .orders-filter-card {
+    padding: 22px;
+  }
+
+  .orders-filter-header h2 {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumbs {
+
+  background: transparent;
+
+  padding: 18px 0 8px;
+}
+
+/* LIST */
+
+.breadcrumb {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0;
+
+  margin: 0;
+
+  list-style: none;
+
+  background: transparent;
+}
+
+/* ITEMS */
+
+.breadcrumb li {
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #94a3b8;
+
+  display: flex;
+
+  align-items: center;
+}
+
+/* SEPARATOR */
+
+.breadcrumb li:not(:last-child)::after {
+
+  content: "/";
+
+  margin-left: 10px;
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+}
+
+/* LINKS */
+
+.breadcrumb li a {
+
+  text-decoration: none;
+
+  color: #22c55e;
+
+  transition: 0.25s ease;
+}
+
+.breadcrumb li a:hover {
+
+  color: #16a34a;
+}
+
+/* ACTIVE */
+
+.breadcrumb .active {
+
+  color: #64748b;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   STATUS HERO
+========================================================= */
+
+.status-hero {
+
+  min-height: 220px;
+
+  background:
+    linear-gradient(
+      rgba(15,23,42,0.74),
+      rgba(15,23,42,0.74)
+    ),
+    url("/images/44.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px 20px;
+}
+
+.status-overlay {
+
+  max-width: 720px;
+
+  color: white;
+}
+
+.status-badge {
+
+  display: inline-block;
+
+  padding: 8px 16px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.14);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  margin-bottom: 16px;
+}
+
+.status-hero h1 {
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  margin-bottom: 12px;
+
+  letter-spacing: -1px;
+}
+
+.status-hero p {
+
+  font-size: 15px;
+
+  color: rgba(255,255,255,0.88);
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.status-section {
+
+  padding: 55px 0 80px;
+
+  background: #f3f4f6;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.status-card {
+
+  max-width: 700px;
+
+  margin: auto;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 34px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow:
+    0 15px 35px rgba(15,23,42,0.06);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.status-header {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.status-header h2 {
+
+  font-size: 34px;
+
+  font-weight: 800;
+
+  color: #0f172a;
+
+  margin-bottom: 8px;
+}
+
+.status-header p {
+
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+/* =========================================================
+   INFO BOXES
+========================================================= */
+
+.status-info {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.status-info-box {
+
+  background: #f8fafc;
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  border: 1px solid #edf2f7;
+}
+
+.status-info-box span {
+
+  display: block;
+
+  font-size: 12px;
+
+  color: #64748b;
+
+  margin-bottom: 8px;
+}
+
+.status-info-box strong {
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  color: #0f172a;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   STATUS LABEL
+========================================================= */
+
+.status-label {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  font-size: 12px !important;
+
+  font-weight: 700 !important;
+
+  width: fit-content;
+}
+
+.status-label.confirmed {
+
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+.status-label.shipped,
+.status-label.in-transit {
+
+  background: #fef3c7;
+
+  color: #b45309;
+}
+
+.status-label.out-for-delivery {
+
+  background: #ede9fe;
+
+  color: #7c3aed;
+}
+
+.status-label.delivered {
+
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.status-label.cancelled,
+.status-label.returned {
+
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.status-form label {
+
+  display: block;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+
+  margin-bottom: 12px;
+}
+
+.status-form select {
+
+  width: 100%;
+
+  height: 54px;
+
+  border-radius: 14px;
+
+  border: 1px solid #dbe3ec;
+
+  background: #f8fafc;
+
+  padding: 0 16px;
+
+  font-size: 14px;
+
+  color: #0f172a;
+
+  transition: 0.3s ease;
+
+  margin-bottom: 26px;
+}
+
+.status-form select:focus {
+
+  outline: none;
+
+  background: white;
+
+  border-color: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34,197,94,0.10);
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.status-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   UPDATE BUTTON
+========================================================= */
+
+.update-status-btn {
+
+  flex: 1;
+
+  min-width: 220px;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #22c55e
+    );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.update-status-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 24px rgba(34,197,94,0.20);
+}
+
+.update-status-btn:disabled {
+
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-orders-link {
+
+  flex: 1;
+
+  min-width: 220px;
+
+  height: 52px;
+
+  border-radius: 14px;
+
+  border: 1px solid #22c55e;
+
+  background: white;
+
+  color: #16a34a;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.back-orders-link:hover {
+
+  background: #f0fdf4;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .status-hero {
+
+    min-height: 190px;
+  }
+
+  .status-hero h1 {
+
+    font-size: 34px;
+  }
+
+  .status-card {
+
+    padding: 26px 20px;
+  }
+
+  .status-header h2 {
+
+    font-size: 28px;
+  }
+
+  .status-info {
+
+    grid-template-columns: 1fr;
+  }
+
+  .status-actions {
+
+    flex-direction: column;
+  }
+
+  .update-status-btn,
+  .back-orders-link {
+
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .status-section {
+
+    padding: 40px 0 60px;
+  }
+
+  .status-card {
+
+    border-radius: 18px;
+  }
+
+  .status-hero h1 {
+
+    font-size: 28px;
+  }
+
+  .status-hero p {
+
+    font-size: 14px;
+  }
+
+  .status-form select {
+
+    height: 50px;
+  }
+
+  .update-status-btn,
+  .back-orders-link {
+
+    height: 48px;
+
+    font-size: 14px;
+  }
+}

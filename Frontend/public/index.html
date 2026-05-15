@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="theme-color" content="#22c55e" />
+
+    <meta name="description" content="GoFetch Grocery Application" />
+
+    <title>GoFetch</title>
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+      href="css/bootstrap.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="css/admin.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- FONT AWESOME -->
+
+    <link href="css/font-awesome.css" rel="stylesheet" />
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =====================================================
+         JQUERY
+    ====================================================== -->
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+
+    <!-- =====================================================
+         SMOOTH SCROLL
+    ====================================================== -->
+
+    <script type="text/javascript" src="js/move-top.js"></script>
+
+    <script type="text/javascript" src="js/easing.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+          event.preventDefault();
+
+          $("html,body").animate(
+            {
+              scrollTop: $(this.hash).offset().top,
+            },
+            1000,
+          );
+        });
+      });
+    </script>
+
+    <!-- =====================================================
+         SLIDER
+    ====================================================== -->
+
+    <link href="css/skdslider.css" rel="stylesheet" />
+
+    <script src="js/skdslider.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        jQuery("#demo1").skdslider({
+          delay: 5000,
+          animationSpeed: 2000,
+          showNextPrev: true,
+          showPlayButton: false,
+          autoSlide: true,
+          animationType: "fading",
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+
+    <div id="root"></div>
+
+    <!-- =====================================================
+         JS
+    ====================================================== -->
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- =====================================================
+         MINI CART
+    ====================================================== -->
+
+    <script src="js/minicart.min.js"></script>
+
+    <script>
+      paypal.minicart.render({
+        action: "#",
+      });
+
+      if (~window.location.search.indexOf("reset=true")) {
+        paypal.minicart.reset();
+      }
+    </script>
+  </body>
+</html>
