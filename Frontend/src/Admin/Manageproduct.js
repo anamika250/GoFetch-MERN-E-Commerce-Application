@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Manageproduct() {
-  console.log("API URL:", process.env.REACT_APP_APIURL);
-
   const API = process.env.REACT_APP_APIURL;
 
   const [pname, setpname] = useState("");
@@ -24,6 +22,7 @@ function Manageproduct() {
   const [pid, setpid] = useState("");
   const [editmode, seteditmode] = useState(false);
   const fileref = useRef();
+
 
   useEffect(() => {
     document.title = "Manage Product";

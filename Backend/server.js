@@ -21,7 +21,8 @@ const port = process.env.PORT || 9000;
 // ================= MIDDLEWARE =================
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://go-fetch-mern-e-commerce-application.vercel.app/",
+  "https://go-fetch-mern-e-commerce-application.vercel.app",
+  "https://go-fetch-mern-e-commerce-applicatio.vercel.app",
 ];
 
 app.use(
