@@ -27,8 +27,5 @@
       "react-app",
       "react-app/jest"
     ]
-  },
-  "engines": {
-    "node": "18.x"
   }
 }
