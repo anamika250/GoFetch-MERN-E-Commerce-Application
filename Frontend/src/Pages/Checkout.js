@@ -103,7 +103,7 @@ function Checkout() {
             <div className="bill-box">
               <span>Total Amount</span>
 
-              <h3>₹ {sessionStorage.getItem("gtotal")}</h3>
+              <h3>₹ {parseFloat(sessionStorage.getItem("gtotal") || 0).toFixed(2)}</h3>
             </div>
 
             {/* FORM */}
