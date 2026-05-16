@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# 🛒 GoFetch – MERN E-Commerce Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GoFetch is a full-stack MERN E-Commerce web application built with modern technologies and production-ready architecture.  
+It provides secure authentication, product management, cart functionality, order handling, admin dashboard, password reset via email, and responsive UI for a seamless shopping experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# 🚀 Live Demo
 
-### `npm start`
+## 🌐 Frontend
+https://go-fetch-mern-e-commerce-applicatio.vercel.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ⚙️ Backend API
+https://gofetch-backend.onrender.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 👤 User Features
+- User Registration & Login
+- JWT Authentication
+- Forgot Password & Reset Password
+- Secure Cookie-Based Authentication
+- Product Search
+- Product Categories & Subcategories
+- Product Details Page
+- Add to Cart
+- Update Cart Quantity
+- Remove from Cart
+- Checkout Flow
+- Order History
+- Responsive UI
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Admin Features
+- Admin Authentication
+- Add/Edit/Delete Products
+- Manage Categories
+- Manage Subcategories
+- Manage Users
+- Manage Orders
+- Dashboard Access
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔐 Security Features
+- Password Hashing using bcrypt
+- JWT Token Authentication
+- Protected Routes
+- HTTP-only Cookies
+- CORS Security
+- Google reCAPTCHA Integration
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 🧰 Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Frontend
+- React.js
+- React Router DOM
+- Axios
+- React Toastify
+- CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+- Brevo Email API
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Deployment
+- Vercel (Frontend)
+- Render (Backend)
+- MongoDB Atlas (Database)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 📂 Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+GoFetch-MERN-E-Commerce-Application/
+│
+├── Backend/
+│   ├── Controllers/
+│   ├── Middleware/
+│   ├── Models/
+│   ├── Routes/
+│   ├── Util/
+│   └── server.js
+│
+├── Frontend/
+│   ├── public/
+│   ├── src/
+│   └── package.json
+│
+├── .gitignore
+└── README.md
