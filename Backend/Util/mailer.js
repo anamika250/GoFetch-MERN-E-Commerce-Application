@@ -1,32 +1,24 @@
-require("dns").setDefaultResultOrder("ipv4first");
+const { Resend } = require("resend");
 
-const nodemailer = require("nodemailer");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.SMTP_UNAME,
-    pass: process.env.SMTP_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-});
-
-const sendMail = async (mailOptions) => {
+const sendMail = async ({ to, subject, html }) => {
   try {
-    let info = await transporter.sendMail(mailOptions);
+    const data = await resend.emails.send({
+      from: "GoFetch <onboarding@resend.dev>",
+      to,
+      subject,
+      html,
+    });
 
-    console.log("Email sent:", info.response);
+    console.log("Email sent:", data);
 
-    return { success: true, info };
+    return { success: true };
   } catch (error) {
-    console.error("Email error:", error);
+    console.error("Mail failed:", error);
 
     return { success: false, error };
   }
 };
 
-module.exports = { transporter, sendMail };
+module.exports = { sendMail };

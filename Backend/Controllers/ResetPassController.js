@@ -2,7 +2,7 @@ const RegisterModel = require("../Models/UserModel").RegisterModel;
 const bcrypt = require("bcrypt");
 const { v4: uuidv4 } = require("uuid");
 const resetPassModel = require("../Models/ResetPass");
-const { transporter } = require("../Util/mailer");
+const { sendMail } = require("../Util/mailer");
 
 const saltRounds = 10;
 
@@ -86,7 +86,14 @@ const forgotPassword = async (req, res) => {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    const result = await sendMail(mailOptions);
+
+    if (!result.success) {
+      return res.send({
+        code: 0,
+        msg: "Error sending email",
+      });
+    }
 
     res.send({ code: 1, msg: "Reset link sent to email" });
   } catch (e) {
