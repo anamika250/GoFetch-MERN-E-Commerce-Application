@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const { v4: uuidv4 } = require("uuid");
 const RegisterModel = require("../Models/UserModel").RegisterModel;
 const jwt = require("jsonwebtoken");
-const { transporter } = require("../Util/mailer");
+const { sendMail } = require("../Util/mailer");
 const axios = require("axios");
 
 const saltRounds = 10;
@@ -53,15 +53,9 @@ const createUser = async (req, res) => {
       `,
     };
 
-    const mailResult = await transporter
-      .sendMail(mailOptions)
-      .then(() => true)
-      .catch((err) => {
-        console.log("Mail failed:", err.message);
-        return false;
-      });
+    const result = await sendMail(mailOptions);
 
-    if (!mailResult) {
+    if (!result.success) {
       return res.send({
         code: 1,
         msg: "Account created but email could not be sent",
