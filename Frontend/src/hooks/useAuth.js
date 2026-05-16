@@ -89,7 +89,7 @@ function useAuth() {
   async function forgotPassword(uname) {
     try {
       const res = await axios.post("/api/resetpass/forgot", {
-        uname,
+        username,
       });
 
       if (res.data.code === 1) {

@@ -45,9 +45,9 @@ const changePassword = async (req, res) => {
 //FORGOT PASSWORD
 const forgotPassword = async (req, res) => {
   try {
-    const { email } = req.body;
+    const { username } = req.body;
 
-    if (!email) {
+    if (!username) {
       return res.send({
         code: 0,
         msg: "Email required",
@@ -55,7 +55,7 @@ const forgotPassword = async (req, res) => {
     }
 
     const user = await RegisterModel.findOne({
-      username: email.toLowerCase(),
+      username: username.toLowerCase(),
     });
 
     if (!user) {
@@ -70,18 +70,18 @@ const forgotPassword = async (req, res) => {
     const exptime = new Date(Date.now() + 15 * 60 * 1000);
 
     await resetPassModel.deleteMany({
-      username: email.toLowerCase(),
+      username: username.toLowerCase(),
     });
 
     await new resetPassModel({
-      username: email.toLowerCase(),
+      username: username.toLowerCase(),
       token: resettoken,
       exptime,
     }).save();
 
     const mailOptions = {
       from: "GoFetch <gofetch783@gmail.com>",
-      to: email.toLowerCase(),
+      to: username.toLowerCase(),
       subject: "Reset Password - GoFetch",
 
       html: `
