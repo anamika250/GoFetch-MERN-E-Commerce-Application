@@ -84,7 +84,7 @@ const loginUser = async (req, res) => {
       });
     }
     const user = await RegisterModel.findOne({
-      username: uname,
+      username: uname.toLowerCase(),
     });
 
     if (!user) {

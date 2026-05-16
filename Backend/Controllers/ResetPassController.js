@@ -51,7 +51,9 @@ const forgotPassword = async (req, res) => {
       return res.send({ code: 0, msg: "Username required" });
     }
 
-    const user = await RegisterModel.findOne({ username });
+    const user = await RegisterModel.findOne({
+      username: username.toLowerCase(),
+    });
 
     if (!user) {
       return res.send({ code: 0, msg: "User not found" });
@@ -60,22 +62,24 @@ const forgotPassword = async (req, res) => {
     const resettoken = uuidv4();
     const exptime = new Date(Date.now() + 15 * 60 * 1000);
 
-    await resetPassModel.deleteMany({ username });
+    await resetPassModel.deleteMany({
+      username: username.toLowerCase(),
+    });
 
     await new resetPassModel({
-      username,
+      username: username.toLowerCase(),
       token: resettoken,
       exptime,
     }).save();
 
     const mailOptions = {
       from: process.env.MAIL_USER,
-      to: username,
+      to: username.toLowerCase(),
       subject: "Reset Password - GoFetch",
       html: `
         Hello ${user.name},<br/><br/>
         Click below to reset your password:<br/><br/>
-        <a href="http://localhost:3000/resetpassword?token=${resettoken}">
+        <a href="${process.env.FRONTEND_URL}/resetpassword?token=${resettoken}">
           Reset Password
         </a><br/><br/>
         This link expires in 15 minutes.
