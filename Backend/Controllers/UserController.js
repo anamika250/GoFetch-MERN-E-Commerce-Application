@@ -40,7 +40,7 @@ const createUser = async (req, res) => {
     await newUser.save();
 
     const mailOptions = {
-      from: process.env.SMTP_UNAME,
+      from: "GoFetch <gofetch783@gmail.com>",
       to: uname,
       subject: "Activate your GoFetch account",
       html: `

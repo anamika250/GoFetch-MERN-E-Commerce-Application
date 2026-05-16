@@ -1,23 +1,32 @@
-const { Resend } = require("resend");
+const nodemailer = require("nodemailer");
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: "smtp-relay.brevo.com",
+  port: 587,
+  secure: false,
 
-const sendMail = async ({ to, subject, html }) => {
+  auth: {
+    user: process.env.SMTP_UNAME,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
+const sendMail = async (mailOptions) => {
   try {
-    const data = await resend.emails.send({
-      from: "GoFetch <onboarding@resend.dev>",
-      to,
-      subject,
-      html,
-    });
+    const info = await transporter.sendMail(mailOptions);
 
-    console.log("Email sent:", data);
+    console.log("Mail sent:", info.response);
 
-    return { success: true };
+    return {
+      success: true,
+    };
   } catch (error) {
-    console.error("Mail failed:", error);
+    console.log("Mail failed:", error.message);
 
-    return { success: false, error };
+    return {
+      success: false,
+      error,
+    };
   }
 };
 

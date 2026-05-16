@@ -73,7 +73,7 @@ const forgotPassword = async (req, res) => {
     }).save();
 
     const mailOptions = {
-      from: process.env.SMTP_UNAME,
+      from: "GoFetch <gofetch783@gmail.com>",
       to: username.toLowerCase(),
       subject: "Reset Password - GoFetch",
       html: `

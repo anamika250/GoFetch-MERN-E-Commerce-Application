@@ -23,7 +23,7 @@ const contactus = async (req, res) => {
 
     // MAIL OPTIONS
     const mailOptions = {
-      from: process.env.SMTP_UNAME,
+      from: "GoFetch <gofetch783@gmail.com>",
 
       to: process.env.SMTP_UNAME,
 
