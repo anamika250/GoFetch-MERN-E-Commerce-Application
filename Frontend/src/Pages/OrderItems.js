@@ -89,7 +89,7 @@ function OrderItems() {
                       <div className="orderitem-total">
                         <span>Total</span>
 
-                        <h4>₹{item.tcost}</h4>
+                        <h4>₹{parseFloat(item.tcost || 0).toFixed(2)}</h4>
                       </div>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ function OrderItems() {
               <div className="grand-total-card">
                 <span>Grand Total</span>
 
-                <h2>₹{grandTotal}</h2>
+                <h2>₹{parseFloat(grandTotal || 0).toFixed(2)}</h2>
               </div>
             </>
           ) : (
