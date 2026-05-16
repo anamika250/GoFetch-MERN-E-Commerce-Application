@@ -53,9 +53,25 @@ const createUser = async (req, res) => {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    const mailResult = await transporter
+      .sendMail(mailOptions)
+      .then(() => true)
+      .catch((err) => {
+        console.log("Mail failed:", err.message);
+        return false;
+      });
 
-    res.send({ code: 1, msg: "Registration successful. Check email." });
+    if (!mailResult) {
+      return res.send({
+        code: 1,
+        msg: "Account created but email could not be sent",
+      });
+    }
+
+    res.send({
+      code: 1,
+      msg: "Registration successful. Check email.",
+    });
   } catch (e) {
     res.send({ code: 0, msg: e.message });
   }
