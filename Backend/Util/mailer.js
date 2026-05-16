@@ -15,13 +15,13 @@ const sendMail = async (mailOptions) => {
   try {
     const info = await transporter.sendMail(mailOptions);
 
-    console.log("Mail sent:", info.response);
+    console.log("MAIL SUCCESS:", info);
 
     return {
       success: true,
     };
   } catch (error) {
-    console.log("Mail failed:", error.message);
+    console.log("MAIL FULL ERROR:", error);
 
     return {
       success: false,

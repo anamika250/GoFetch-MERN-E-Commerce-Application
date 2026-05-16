@@ -25,21 +25,18 @@ const contactus = async (req, res) => {
     const mailOptions = {
       from: "GoFetch <gofetch783@gmail.com>",
 
-      to: process.env.SMTP_UNAME,
+      to: "gofetch783@gmail.com",
 
       replyTo: email,
 
       subject: "Message from Website - Contact Us",
 
       html: `
-        <b>Name:</b> ${name}<br/>
-
-        <b>Phone:</b> ${phone}<br/>
-
-        <b>Email:</b> ${email}<br/>
-
-        <b>Message:</b> ${message}
-      `,
+    <b>Name:</b> ${name}<br/>
+    <b>Phone:</b> ${phone}<br/>
+    <b>Email:</b> ${email}<br/>
+    <b>Message:</b> ${message}
+  `,
     };
 
     // SEND MAIL
