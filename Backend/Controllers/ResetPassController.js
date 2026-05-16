@@ -45,43 +45,54 @@ const changePassword = async (req, res) => {
 //FORGOT PASSWORD
 const forgotPassword = async (req, res) => {
   try {
-    const { username } = req.body;
+    const { email } = req.body;
 
-    if (!username) {
-      return res.send({ code: 0, msg: "Username required" });
+    if (!email) {
+      return res.send({
+        code: 0,
+        msg: "Email required",
+      });
     }
 
     const user = await RegisterModel.findOne({
-      username: username.toLowerCase(),
+      username: email.toLowerCase(),
     });
 
     if (!user) {
-      return res.send({ code: 0, msg: "User not found" });
+      return res.send({
+        code: 0,
+        msg: "User not found",
+      });
     }
 
     const resettoken = uuidv4();
+
     const exptime = new Date(Date.now() + 15 * 60 * 1000);
 
     await resetPassModel.deleteMany({
-      username: username.toLowerCase(),
+      username: email.toLowerCase(),
     });
 
     await new resetPassModel({
-      username: username.toLowerCase(),
+      username: email.toLowerCase(),
       token: resettoken,
       exptime,
     }).save();
 
     const mailOptions = {
       from: "GoFetch <gofetch783@gmail.com>",
-      to: username.toLowerCase(),
+      to: email.toLowerCase(),
       subject: "Reset Password - GoFetch",
+
       html: `
         Hello ${user.name},<br/><br/>
+
         Click below to reset your password:<br/><br/>
+
         <a href="${process.env.FRONTEND_URL}/resetpassword?token=${resettoken}">
           Reset Password
         </a><br/><br/>
+
         This link expires in 15 minutes.
       `,
     };
@@ -95,9 +106,15 @@ const forgotPassword = async (req, res) => {
       });
     }
 
-    res.send({ code: 1, msg: "Reset link sent to email" });
+    res.send({
+      code: 1,
+      msg: "Reset link sent to email",
+    });
   } catch (e) {
-    res.send({ code: 0, msg: e.message });
+    res.send({
+      code: 0,
+      msg: e.message,
+    });
   }
 };
 
